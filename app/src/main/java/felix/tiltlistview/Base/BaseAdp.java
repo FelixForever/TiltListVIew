@@ -1,4 +1,4 @@
-package felix.tiltlistview;
+package felix.tiltlistview.Base;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

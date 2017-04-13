@@ -13,7 +13,7 @@ import android.view.View;
  */
 
 public class MyRecyclerView extends RecyclerView {
-    private final static String TAG= MyRecyclerView.class.getSimpleName();
+    private final static String TAG = MyRecyclerView.class.getSimpleName();
     private Matrix mMatrix = new Matrix();
     private float degress = 10;
 
@@ -40,14 +40,33 @@ public class MyRecyclerView extends RecyclerView {
         super.onMeasure(widthSpec, heightSpec);
         int widthSize = MeasureSpec.getSize(widthSpec);
         int heightSize = MeasureSpec.getSize(heightSpec);
-        int extra=((int) (widthSize*1.0 * Math.tan(degress / 45.0)));
-        Log.i(TAG, "onMeasure: "+extra);
+        int extra = ((int) (widthSize * 1.0 * Math.tan(degress / 45.0)));
+        Log.i(TAG, "onMeasure: " + heightSize + " extra=" + extra);
+        Log.i(TAG, "onMeasure: " + widthSize);
         setMeasuredDimension(widthSize, heightSize + extra);
     }
 
+
+//    @Override
+//    public View findChildViewUnder(float x, float y) {
+//        final int count = mChildHelper.getChildCount();
+//        for (int i = count - 1; i >= 0; i--) {
+//            final View child = mChildHelper.getChildAt(i);
+//            final float translationX = ViewCompat.getTranslationX(child);
+//            final float translationY = ViewCompat.getTranslationY(child);
+//            if (x >= child.getLeft() + translationX &&
+//                    x <= child.getRight() + translationX &&
+//                    y >= child.getTop() + translationY &&
+//                    y <= child.getBottom() + translationY) {
+//                return child;
+//            }
+//        }
+//        return super.findChildViewUnder(x, y);
+//    }
+
     @Override
-    public boolean isShown() {
-        return super.isShown();
+    protected void measureChildren(int widthMeasureSpec, int heightMeasureSpec) {
+        super.measureChildren(widthMeasureSpec, heightMeasureSpec);
     }
 
     @Override

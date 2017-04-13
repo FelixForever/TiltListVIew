@@ -6,6 +6,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import felix.tiltlistview.Base.BaseAdp;
+import felix.tiltlistview.Base.BaseVH;
+
 /**
  * Created by felix on 17-4-13.
  */
